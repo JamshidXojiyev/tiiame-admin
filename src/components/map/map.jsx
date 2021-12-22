@@ -53,29 +53,29 @@ function MyMap(props) {
   return (
     <Wrap>
       <MapContainer
-        maxBoundsViscosity={0}
-        maxBounds={[
-          [53, -110],
-          [53, 110],
-          [-53, 110],
-          [-53, -110],
-        ]}
-        center={[0, 0]}
-        zoom={3}
-        maxZoom={6}
-        minZoom={3}
+        // maxBoundsViscosity={0}
+        // maxBounds={[
+        //   [53, -110],
+        //   [53, 110],
+        //   [-53, 110],
+        //   [-53, -110],
+        // ]}
+        center={[41.32368123473394, 69.29481300121184]}
+        zoom={16}
+        // maxZoom={6}
+        // minZoom={3}
       >
         <LayersControl position="topright">
-          <LayersControl.BaseLayer checked name="jpg">
+          <LayersControl.BaseLayer checked name="Sputnik">
             <TileLayer
               attribution="&copy;"
-              url="https://raw.githubusercontent.com/JamshidXojiyev/img/main/132/{z}/{x}/{y}.png"
+              url="http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
             />
           </LayersControl.BaseLayer>
-          <LayersControl.BaseLayer name="png">
+          <LayersControl.BaseLayer name="Xariyta">
             <TileLayer
               attribution="&copy;"
-              url="https://raw.githubusercontent.com/JamshidXojiyev/SmartGuide/main/map/{z}/{x}/{y}.png"
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
           </LayersControl.BaseLayer>
           <FeatureGroup>
