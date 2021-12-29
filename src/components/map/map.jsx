@@ -69,7 +69,7 @@ function MyMap(props) {
           <LayersControl.BaseLayer checked name="Sputnik">
             <TileLayer
               attribution="&copy;"
-              url="http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+              url="https://raw.githubusercontent.com/JamshidXojiyev/tiiame-map/main/dark/{z}/{y}/{x}.png"
             />
           </LayersControl.BaseLayer>
           <LayersControl.BaseLayer name="Xariyta">
