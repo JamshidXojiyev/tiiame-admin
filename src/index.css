@@ -1,13 +1,31 @@
-body {
+*,
+*::before,
+*::after {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+body {
+  background-color: #e5e5e5;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*:focus {
+  outline: none !important;
+}
+.leaflet-container {
+  width: 100%;
+  height: 100vh;
+}
+.polymoly {
+  fill: url();
+  background-image: url("https://banner2.cleanpng.com/20180614/yce/kisspng-city-map-balvanera-city-map-nez-buenos-aires-5b22d1b9bba360.8788754715290085697686.jpg") !important;
 }
