@@ -12,6 +12,7 @@ export const DialogStyle = styled.div`
   width: 100%;
   height: 100vh;
   background: rgba(43, 43, 43, 0.5);
+  z-index: 99999;
 `;
 export const DialogContainer = styled.div`
   max-width: 70%;

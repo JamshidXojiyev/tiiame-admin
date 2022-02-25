@@ -4,10 +4,10 @@ import { ReactComponent as BottomIcon } from "../../assets/icons/bottom.svg";
 
 export const Header = styled.div`
   && {
-    position: absolute;
+    position: fixed;
     width: 100%;
-    height: 63px;
-    /* z-index: 2; */
+    height: 48px;
+    z-index: 99999;
     left: 0px;
     top: 0px;
     background: #ffffff;
@@ -41,11 +41,11 @@ export const MenuName = styled.h1`
 // sidear
 export const Sidebar = styled.div`
   user-select: none;
-  position: absolute;
+  position: fixed;
   width: ${({ position }) => (position ? "278px" : "60px")};
-  height: calc(100vh - 63px);
+  height: calc(100vh - 48px);
   left: 0px;
-  top: 63px;
+  top: 48px;
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
   padding: 18px 6px;
@@ -159,12 +159,11 @@ export const SubItem = styled(Link)`
 // body
 export const Body = styled.div`
   position: absolute;
-  height: calc(100vh - 63px);
-  top: 63px;
-  left: ${({ position }) => (position ? "306px" : "88px")};
+  height: calc(100vh - 48px);
+  top: 48px;
+  left: ${({ position }) => (position ? "278px" : "60px")};
   right: 0;
   bottom: 0;
-  padding: 28px 21px;
-  padding-left: 0;
+  padding: 14px 21px;
   transition: all 300ms;
 `;

@@ -12,7 +12,7 @@ const liteStyle = css`
   border: 1px solid #e4e6ee;
   border-radius: 4px;
 
-  font-weight: bold;
+  font-weight: 500;
   font-size: 13px;
   line-height: 16px;
 `;

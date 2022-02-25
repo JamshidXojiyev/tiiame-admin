@@ -54,7 +54,7 @@ export const TextareaStyle = styled.textarea`
   color: #101010;
   font-family: Inter;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 13px;
   line-height: 16px;
   :focus {
