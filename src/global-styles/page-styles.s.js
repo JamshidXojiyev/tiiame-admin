@@ -1,9 +1,8 @@
 import styled, { css } from "styled-components";
 
 export const PageTitle = styled.h1`
-  font-family: Inter;
-  font-style: normal;
-  font-weight: bold;
+  font-family: "Montserrat";
+  font-weight: 700;
   font-size: 21px;
   line-height: 25px;
   color: #242525;
@@ -18,7 +17,8 @@ export const PageTitle = styled.h1`
         `};
 `;
 export const UserLimit = styled.h2`
-  font-family: Inter;
+  font-family: "Montserrat";
+
   font-style: normal;
   font-weight: 500;
   font-size: 15px;

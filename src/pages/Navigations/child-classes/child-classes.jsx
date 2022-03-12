@@ -9,8 +9,11 @@ import Dialog from "../../../components/dialog/dialog";
 import DialogParentClass from "./dialog";
 import { childData } from "./child-classes-data";
 import DialogChildClass from "./dialog";
+import { useAlert } from "react-alert";
 
 function ChildClasses(props) {
+  const alert = useAlert();
+
   const [dataBase, setDataBase] = useState(childData);
   const [total, setTotal] = useState(1);
   const [pageLimit, setPageLimit] = useState(10);
@@ -29,12 +32,23 @@ function ChildClasses(props) {
         description: item.description,
         btn: (
           <MyDiv display="flex">
-            <MyButton icon={<DeleteIcon />} shadowAnime bgNone />
+            <MyButton
+              icon={<DeleteIcon />}
+              shadowAnime
+              bgNone
+              onClick={() => {
+                alert.error(
+                  "The database is being restored because it has malfunctions."
+                );
+              }}
+            />
             <MyButton
               icon={<EditIcon />}
               shadowAnime
               bgNone
-              onClick={() => setDialog({ ...dialog, type: true, value: item })}
+              onClick={() => {
+                setDialog({ ...dialog, type: true, value: item });
+              }}
             />
           </MyDiv>
         ),
@@ -69,7 +83,12 @@ function ChildClasses(props) {
         <Dialog
           close={(e) => setDialog({ ...dialog, type: e, value: [] })}
           title="Create Child class"
-          body={<DialogChildClass value={dialog.value} />}
+          body={
+            <DialogChildClass
+              value={dialog.value}
+              close={(e) => setDialog({ ...dialog, type: e, value: [] })}
+            />
+          }
         />
       )}
     </>

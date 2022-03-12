@@ -4,8 +4,9 @@ export const SearchInputStyle = styled.input`
   && {
     width: ${({ width }) => (width ? width : "100%")};
     box-sizing: border-box;
-    font-family: "Inter", sans-serif;
-    font-size: 14px;
+    font-family: Montserrat;
+    font-size: 13px;
+    font-weight: 300;
     line-height: 17px;
     border: 1px solid #e4e6ee;
     padding: 11px 16px;

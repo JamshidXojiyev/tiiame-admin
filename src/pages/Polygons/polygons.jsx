@@ -9,8 +9,10 @@ import { ReactComponent as DeleteIcon } from "../../assets/icons/delete.svg";
 import { ReactComponent as EditIcon } from "../../assets/icons/edit.svg";
 import CreatePolygon from "./create-polygon/create-polygon";
 // import CreateNews from "./create-news/create-news";
+import { useAlert } from "react-alert";
 
 function Polygons(props) {
+  const alert = useAlert();
   const [dataBase, setDataBase] = useState([]);
   const [total, setTotal] = useState(1);
   const [pageLimit, setPageLimit] = useState(10);
@@ -31,12 +33,26 @@ function Polygons(props) {
         polygon_lat_lng: "54.32156165, 46.32156165",
         btn: (
           <MyDiv lineRight>
-            <MyButton icon={<DeleteIcon />} shadowAnime bgNone />
+            <MyButton
+              icon={<DeleteIcon />}
+              shadowAnime
+              bgNone
+              onClick={() => {
+                alert.error(
+                  "The database is being restored because it has malfunctions."
+                );
+              }}
+            />
             <MyButton
               icon={<EditIcon />}
               shadowAnime
               bgNone
-              onClick={() => setDialogOpen(true)}
+              onClick={() => {
+                // setDialogOpen(true);
+                alert.error(
+                  "The database is being restored because it has malfunctions."
+                );
+              }}
             />
           </MyDiv>
         ),

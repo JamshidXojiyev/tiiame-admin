@@ -8,9 +8,11 @@ import * as Yup from "yup";
 import MyButton from "../../../components/my-button/my-button";
 import { MyDiv } from "../../../global-styles/my-div.s";
 import { MyForm } from "../../../global-styles/my-form.s";
+import { useAlert } from "react-alert";
 
 function DialogChildClass(props) {
-  console.log(props.value);
+  const alert = useAlert();
+
   const formik = useFormik({
     initialValues:
       Object.keys(props.value).length > 0
@@ -28,9 +30,14 @@ function DialogChildClass(props) {
       name: Yup.string().required("Required !"),
     }),
     onSubmit: (val) => {
+      alert.error(
+        "The database is being restored because it has malfunctions."
+      );
+      props.close(false);
       console.log(val);
     },
   });
+
   return (
     <MyForm onSubmit={formik.handleSubmit}>
       <MyInput
@@ -47,8 +54,9 @@ function DialogChildClass(props) {
       <SelectSearch
         label="Select Parent Class"
         name="parent"
-        value={formik.values.parent}
         values={parentData.map((item) => [item.name])}
+        value={formik.values.parent}
+        onChange={(e) => formik.setFieldValue("parent", e.target.value)}
       />
       <MyTextarea
         label="Comment:"
@@ -58,7 +66,12 @@ function DialogChildClass(props) {
         onChange={formik.handleChange}
       />
       <MyDiv lineRight>
-        <MyButton type="submit" text="Save" width="150px" />
+        <MyButton
+          disabled={!formik.values.name || !formik.values.parent}
+          type="submit"
+          text="Save"
+          width="150px"
+        />
       </MyDiv>
     </MyForm>
   );

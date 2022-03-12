@@ -24,11 +24,12 @@ import ChildClasses from "../Navigations/child-classes/child-classes";
 import Polygons from "../Polygons/polygons";
 import News from "../News/news";
 import { useLocation } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 function MainMenu(props) {
   const location = useLocation();
   const [positionMenu, setPositionMenu] = useState(true);
-  const [subItemType, setSubItemType] = useState(false);
+  const [subItemType, setSubItemType] = useState(true);
   return (
     <MyDiv position="relative">
       <Header position={positionMenu}>
@@ -111,6 +112,9 @@ function MainMenu(props) {
           />
           <Route exact path="/polygons" component={Polygons} />
           <Route exact path="/news" component={News} />
+          <Route path="*">
+            <Redirect to="/navigations/parent-classes" />
+          </Route>
         </Switch>
       </Body>
     </MyDiv>

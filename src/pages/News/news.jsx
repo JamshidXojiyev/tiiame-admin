@@ -8,8 +8,11 @@ import { PageTitle, UserLimit } from "../../global-styles/page-styles.s";
 import { ReactComponent as DeleteIcon } from "../../assets/icons/delete.svg";
 import { ReactComponent as EditIcon } from "../../assets/icons/edit.svg";
 import CreateNews from "./create-news/create-news";
+import { useAlert } from "react-alert";
 
 function News(props) {
+  const alert = useAlert();
+
   const [dataBase, setDataBase] = useState([]);
   const [total, setTotal] = useState(1);
   const [pageLimit, setPageLimit] = useState(10);
@@ -32,7 +35,16 @@ function News(props) {
         search_hashtag: "#5,  #5-o'quv binosi,  #5 educational building,  #YRB",
         btn: (
           <MyDiv lineRight>
-            <MyButton icon={<DeleteIcon />} shadowAnime bgNone />
+            <MyButton
+              icon={<DeleteIcon />}
+              shadowAnime
+              bgNone
+              onClick={() => {
+                alert.error(
+                  "The database is being restored because it has malfunctions."
+                );
+              }}
+            />
             <MyButton
               icon={<EditIcon />}
               shadowAnime

@@ -9,9 +9,9 @@ import {
 
 function SelectSearch(props) {
   return (
-    <MyDiv>
+    <MyDiv width={props.width}>
       <LabelStyle>{props.label}</LabelStyle>
-      <SearchInputStyle list={props.name} {...props} />
+      <SearchInputStyle width={props.width} list={props.name} {...props} />
       <DatalistStyle width={props.width} id={props.name}>
         {props.values.map((item, index) => (
           <OptionStyle value={item.value ? item.value : item} key={index} />

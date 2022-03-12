@@ -8,31 +8,46 @@ import { ReactComponent as EditIcon } from "../../../assets/icons/edit.svg";
 import Dialog from "../../../components/dialog/dialog";
 import DialogParentClass from "./dialog";
 import { parentData } from "./parent-classes-data";
+import { useAlert } from "react-alert";
 
 function ParentClasses(props) {
+  const alert = useAlert();
+
   const [dataBase, setDataBase] = useState(parentData);
   const [total, setTotal] = useState(1);
   const [pageLimit, setPageLimit] = useState(10);
   const [page, setPage] = useState(1);
   const [newData, setNewData] = useState({
-    header: ["Icon", "Name", "Description", ""],
+    header: ["Icon", "Name", "Join Date", "Description", ""],
     body: [],
-    order: ["icon", "name", "description", "btn"],
+    order: ["icon", "name", "join_date", "description", "btn"],
   });
   useEffect(() => {
     const data = dataBase.map((item) => {
       const testData = {
         icon: item.icon,
         name: item.name,
+        join_date: item.join_date,
         description: item.description,
         btn: (
           <MyDiv display="flex">
-            <MyButton icon={<DeleteIcon />} shadowAnime bgNone />
+            <MyButton
+              icon={<DeleteIcon />}
+              shadowAnime
+              bgNone
+              onClick={() => {
+                alert.error(
+                  "The database is being restored because it has malfunctions."
+                );
+              }}
+            />
             <MyButton
               icon={<EditIcon />}
               shadowAnime
               bgNone
-              onClick={() => setDialogOpen(true)}
+              onClick={() => {
+                setDialog({ type: true, value: item });
+              }}
             />
           </MyDiv>
         ),
@@ -41,7 +56,7 @@ function ParentClasses(props) {
     });
     setNewData({ ...newData, body: data });
   }, [parentData]);
-  const [dialogOpen, setDialogOpen] = useState(false);
+  const [dialog, setDialog] = useState({ type: false, value: [] });
   return (
     <>
       <MyDiv margin="0 0 16px 0" display="flex">
@@ -52,7 +67,7 @@ function ParentClasses(props) {
         <MyButton
           text="+ Add New Class"
           width="160px"
-          onClick={() => setDialogOpen(true)}
+          onClick={() => setDialog({ type: true, value: [] })}
         />
       </MyDiv>
       <MyDiv block>
@@ -63,11 +78,16 @@ function ParentClasses(props) {
           set_page={(e) => setPage(e)}
         />
       </MyDiv>
-      {dialogOpen && (
+      {dialog.type && (
         <Dialog
-          close={(e) => setDialogOpen(e)}
+          close={(e) => setDialog({ type: e, value: [] })}
           title="Create parent class"
-          body={<DialogParentClass />}
+          body={
+            <DialogParentClass
+              value={dialog.value}
+              close={(e) => setDialog({ type: e, value: [] })}
+            />
+          }
         />
       )}
     </>

@@ -28,11 +28,10 @@ export const DialogHeader = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  padding-bottom: 6px;
   margin-bottom: 16px;
 `;
 export const Title = styled.h1`
-  font-family: Inter;
+  font-family: Poppins;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;

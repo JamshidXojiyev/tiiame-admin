@@ -52,9 +52,9 @@ export const TextareaStyle = styled.textarea`
   padding: 12px 16px;
   background-color: #fff;
   color: #101010;
-  font-family: Inter;
+  font-family: Montserrat;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 300;
   font-size: 13px;
   line-height: 16px;
   :focus {
@@ -69,12 +69,12 @@ export const TextareaStyle = styled.textarea`
 export const LabelStyle = styled.label`
   display: block;
   width: 100%;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 
-  font-family: Inter;
+  font-family: Montserrat;
   font-style: normal;
-  font-weight: 600;
-  font-size: 12px;
+  font-weight: 500;
+  font-size: 11px;
   line-height: 15px;
   color: #101010;
 `;

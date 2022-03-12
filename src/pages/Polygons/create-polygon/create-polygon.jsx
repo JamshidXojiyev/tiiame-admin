@@ -5,11 +5,12 @@ import { ReactComponent as BottomIcon } from "../../../assets/icons/bottom.svg";
 import MyButton from "../../../components/my-button/my-button";
 import SelectSearch from "../../../components/select-search/select-search";
 import PolygonMap from "./map/polygon-map";
+import { useAlert } from "react-alert";
 
 function CreatePolygon(props) {
+  const alert = useAlert();
   const [dialog, setDialog] = useState(false);
-  const [textEditor, setTextEditor] = useState("");
-
+  const [searchName, setSearchName] = useState("");
   return (
     <>
       <MyDiv margin="0 0 16px 0" display="flex">
@@ -22,13 +23,27 @@ function CreatePolygon(props) {
           <SelectSearch
             width="230px"
             name="asd"
-            values={["jon", "dou", "alisa"]}
+            values={[
+              "5 educational building",
+              "11 educational building",
+              "B educational building",
+              "G educational building",
+              "V educational building",
+              "1 lecture halls",
+              "2 lecture halls",
+            ]}
+            placeholder="Select building name"
+            onChange={(e) => setSearchName(e.target.value)}
           />
           <MyButton
-            text="Next"
+            text="Save"
             width="120px"
+            disabled={searchName.length > 3 ? false : true}
             onClick={() => {
-              setDialog(true);
+              // setDialog(true);
+              alert.error(
+                "The database is being restored because it has malfunctions."
+              );
             }}
           />
         </MyDiv>

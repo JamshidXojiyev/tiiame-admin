@@ -25,6 +25,7 @@ export const parentData = [
       </svg>
     ),
     name: "Educational buildings",
+    join_date: "August 7, 2021",
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam placeat reiciendis, rem error suscipit autem minus!",
   },
@@ -84,6 +85,7 @@ export const parentData = [
       </svg>
     ),
     name: "Lecture halls",
+    join_date: "August 3, 2021",
     description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
   },
   {
@@ -112,6 +114,7 @@ export const parentData = [
       </svg>
     ),
     name: "Laboratory",
+    join_date: "August 18, 2021",
     description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
   },
   {
@@ -137,6 +140,7 @@ export const parentData = [
       </svg>
     ),
     name: "Innovation cluster",
+    join_date: "August 28, 2021",
     description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
   },
 ];

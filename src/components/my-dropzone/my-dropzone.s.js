@@ -1,23 +1,9 @@
 import styled from "styled-components";
-import MyButton from "../my-button/my-button";
-import { ReactComponent as CheckSVG } from "../../assets/icons/check.svg";
 
-export const OrderIMG = styled.img`
-  margin: 4px 0;
-  height: 92px;
-  border-radius: 8px;
-  object-fit: cover;
-`;
-export const CheckSVGContent = styled(CheckSVG)`
-  margin: 18px 0;
-  height: 100%;
-`;
-export const DropzoneBlock = styled.div`
-  width: 100%;
-  min-height: 100px;
-  border: ${({ error }) =>
-    error ? "1.4px dashed #ff0000 !important" : "1.4px dashed #cdd6e0"};
-  box-sizing: border-box;
+export const DropzoneContainer = styled.div`
+  width: ${({ width }) => (width ? width : "100%")};
+  height: ${({ height }) => (height ? height : "100px")};
+  border: 1.4px dashed #cdd6e0;
   border-radius: 6px;
   display: flex;
   flex-direction: row;
@@ -25,37 +11,62 @@ export const DropzoneBlock = styled.div`
   align-content: center;
   justify-content: center;
   align-items: center;
-  gap: 64px;
-  cursor: pointer;
-  transition: all 0.8s ease-in-out;
-  & h1,
-  span {
-    color: ${({ error }) => (error ? "#ff0000 !important" : "")};
-  }
-  & span {
-    font-weight: ${({ error }) => (error ? "800" : "")};
-  }
 `;
+export const UploadContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+    align-items: center;
+  gap: 48px;
+`;
+export const ValueBlock = styled.div``;
 export const H1 = styled.h1`
-  font-family: "Inter", sans-serif;
+  font-family: Montserrat;
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 12px;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 15px;
   color: #646464;
-  margin-bottom: 8px;
   text-align: center;
+  cursor: pointer;
 `;
 export const SPAN = styled.span`
-  font-family: "Inter", sans-serif;
+  font-family: Montserrat;
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 12px;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 15px;
   color: #ff69a5;
+  cursor: pointer;
 `;
-export const CloseBtn = styled(MyButton)`
+export const SuccessStyle = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+`;
+export const UpdateStyle = styled.button`
+  width: 32px;
+  height: 32px;
   position: absolute;
-  top: -2px;
-  right: -1px;
+  top: 2px;
+  right: 2px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 0;
+  background-color: #00000000;
+  border-radius: 50%;
+  cursor: pointer;
+  :hover {
+    background-color: #00000003;
+  }
 `;
