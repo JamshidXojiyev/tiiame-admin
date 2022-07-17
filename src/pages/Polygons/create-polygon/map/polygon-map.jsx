@@ -30,6 +30,8 @@ function PolygonMap(props) {
                 props.layer("TIIAME 3D map - dark");
               },
             }}
+            noWrap={true}
+            // url="https://raw.githubusercontent.com/JamshidXojiyev/tiiame-map/main/buxoro-map/{z}/{x}/{y}.png"
             url="https://raw.githubusercontent.com/JamshidXojiyev/tiiame-map/main/dark/{z}/{x}/{y}.png"
           />
         </LayersControl.BaseLayer>
@@ -40,6 +42,7 @@ function PolygonMap(props) {
                 props.layer("3D Map Light Mode");
               },
             }}
+            noWrap={true}
             url="https://raw.githubusercontent.com/JamshidXojiyev/tiiame-map/main/lite/{z}/{x}/{y}.png"
           />
         </LayersControl.BaseLayer>
