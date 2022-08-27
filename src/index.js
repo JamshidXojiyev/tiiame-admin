@@ -1,13 +1,18 @@
+import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
+
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import "leaflet/dist/leaflet.css";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import state from "./redux/configStore";
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <Provider store={state}>
+      <App />
+    </Provider>
   </BrowserRouter>,
   document.getElementById("root")
 );
