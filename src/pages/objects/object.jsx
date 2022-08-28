@@ -1,10 +1,4 @@
-import {
-  EditOutlined,
-  EllipsisOutlined,
-  FileAddOutlined,
-  SelectOutlined,
-  SettingOutlined,
-} from "@ant-design/icons";
+import { FileAddOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 import React, { useState } from "react";
 import { Container } from "../../global-styles/container.s";
@@ -15,16 +9,19 @@ import {
 } from "./object.s";
 import ObjectCard from "../../components/object-card/object-card";
 import { ObjectsData } from "../../server/objects-data";
+import { useHistory } from "react-router-dom";
 
 const ObjectPage = () => {
+  const history = useHistory();
   const [objects, setObjects] = useState(ObjectsData);
   return (
     <ObjectPageComponent>
       <HeaderContainer>
-        <Button type="primary" icon={<SelectOutlined />}>
-          Attach object
-        </Button>
-        <Button type="primary" icon={<FileAddOutlined />}>
+        <Button
+          onClick={() => history.push("/object-map")}
+          type="primary"
+          icon={<FileAddOutlined />}
+        >
           Create new object
         </Button>
       </HeaderContainer>

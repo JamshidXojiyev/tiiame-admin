@@ -5,3 +5,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* leaflet css */
+.leaflet-container {
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  background: #f2f3f6 !important;
+}
+.polymoly {
+  fill: url();
+  background-image: url("https://banner2.cleanpng.com/20180614/yce/kisspng-city-map-balvanera-city-map-nez-buenos-aires-5b22d1b9bba360.8788754715290085697686.jpg") !important;
+}

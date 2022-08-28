@@ -1,4 +1,6 @@
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
+import "leaflet/dist/leaflet.css"; // or 'leaflet/dist/leaflet.css'
+import "react-leaflet-fullscreen/dist/styles.css"; // react full screen
 
 import React from "react";
 import ReactDOM from "react-dom";

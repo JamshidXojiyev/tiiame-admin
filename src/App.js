@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import {
@@ -13,11 +13,17 @@ import ObjectPage from "./pages/objects/object";
 import NavigationsPage from "./pages/navigations/navigations";
 import { Switch, Route } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import ObjectMap from "./pages/object-map/object-map";
+import ObjectInfo from "./pages/object-info/object-info";
 
 const { Sider } = Layout;
 
 const App = () => {
   let history = useHistory();
+
+  useEffect(() => {
+    history.push("/object");
+  }, []);
 
   const [collapsed, setCollapsed] = useState(false);
   return (
@@ -43,8 +49,14 @@ const App = () => {
             <Route path="/navigations">
               <NavigationsPage />
             </Route>
-            <Route path="/">
+            <Route path="/object">
               <ObjectPage />
+            </Route>
+            <Route path="/object-map">
+              <ObjectMap />
+            </Route>
+            <Route path="/object-info">
+              <ObjectInfo />
             </Route>
           </Switch>
         </ContentComponent>

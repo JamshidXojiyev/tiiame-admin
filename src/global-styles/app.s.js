@@ -22,15 +22,13 @@ export const HamburgerButton = styled.div`
     line-height: 64px;
     cursor: pointer;
     transition: color 0.3s;
-
     &:hover {
       color: #1890ff;
     }
   }
 `;
 export const ContentComponent = styled(Content)`
-  /* background: #fff; */
-  margin: 24px 16px;
-  /* padding: 24px; */
-  /* min-height: 280px; */
+  padding: 16px;
+  height: calc(100vh - 48px);
+  overflow-y: auto;
 `;
